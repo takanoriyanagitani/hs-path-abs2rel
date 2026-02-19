@@ -1,0 +1,31 @@
+cabal-version:      3.14
+name:               hs-path-abs2rel
+version:            0.1.0.0
+license:            Apache-2.0
+license-file:       LICENSE
+author:             yanagitani
+maintainer:         takanori.yanagitani@gmail.com
+category:           Text
+build-type:         Simple
+extra-doc-files:    CHANGELOG.md
+
+common warnings
+    ghc-options: -Wall -Werror
+
+executable hs-path-abs2rel
+    import:           warnings
+    main-is:          Main.hs
+    build-depends:
+        base >= 4.17 && < 4.23,
+        hs-path-abs2rel,
+    hs-source-dirs:   app
+    default-language: GHC2021
+
+library
+    import:           warnings
+    exposed-modules:  AbsToRel
+    build-depends:
+        base >= 4.17 && < 4.23,
+        filepath >= 1.5.0 && < 1.7.0,
+    hs-source-dirs:   src
+    default-language: GHC2021
